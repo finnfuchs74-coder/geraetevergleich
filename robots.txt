@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://finnfuchs74-coder.github.io/geraetevergleich/sitemap.xml

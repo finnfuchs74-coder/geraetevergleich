@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gerätevergleich 2026 – Smartphones, Tablets, Laptops, PCs & Smartwatches vergleichen</title>
+<meta name="description" content="Kostenloser Gerätevergleich: Über 270 Smartphones, Tablets, Laptops, PCs und Smartwatches von 27 Marken direkt vergleichen – z. B. iPhone 18 Pro vs. Galaxy S26 Ultra. Mit Bewertung nach Verwendungszweck wie Gaming, Arbeit oder Foto.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://finnfuchs74-coder.github.io/geraetevergleich/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gerätevergleich 2026 – Handys, Laptops & mehr vergleichen">
+<meta property="og:description" content="Über 270 Geräte von 27 Marken direkt vergleichen – nach Gaming, Arbeit, Foto oder Preis-Leistung.">
+<meta property="og:url" content="https://finnfuchs74-coder.github.io/geraetevergleich/">
+<meta property="og:locale" content="de_DE">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Gerätevergleich","url":"https://finnfuchs74-coder.github.io/geraetevergleich/","inLanguage":"de-DE","description":"Smartphones, Tablets, Laptops, PCs und Smartwatches direkt vergleichen."}</script>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#0f172a; --ink2:#334155; --muted:#64748b; --dim:#94a3b8;
+    --line:#e5e7eb; --line2:#eef0f3; --soft:#f1f5f9;
+    --accent:#1d4ed8; --accent-soft:#eff4ff;
+    --a:#2563eb; --a-soft:#eff6ff; --b:#c2410c; --b-soft:#fff4ed;
+    --win:#15803d; --win-soft:#ecfdf3;
+    --r:12px; --shadow:0 1px 2px rgba(15,23,42,.04),0 1px 3px rgba(15,23,42,.06);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1,"cv11" 1}
+  button{font:inherit;color:inherit}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+
+  /* Top bar */
+  .topbar{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+  .topbar .wrap{display:flex;align-items:center;gap:14px;height:60px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;letter-spacing:-.01em}
+  .logo i{width:28px;height:28px;border-radius:8px;background:var(--ink);display:grid;place-items:center}
+  .logo i svg{width:16px;height:16px;stroke:#fff}
+  .topbar .meta{margin-left:auto;font-size:13px;color:var(--muted)}
+
+  /* Intro */
+  .intro{padding:40px 0 8px}
+  .intro h1{margin:0;font-size:32px;line-height:1.15;letter-spacing:-.025em;font-weight:700}
+  .intro p{margin:8px 0 0;color:var(--muted);font-size:16px;max-width:680px}
+
+  /* Panel */
+  .panel{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+  .prow{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:18px 22px;align-items:center}
+  .prow + .prow{border-top:1px solid var(--line2)}
+  .plabel{font-size:13px;font-weight:600;color:var(--ink2)}
+  .plabel small{display:block;font-weight:400;color:var(--muted);font-size:12px;margin-top:2px}
+  .seg{display:flex;flex-wrap:wrap;gap:8px}
+  .sbtn{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:8px;border:1px solid var(--line);
+    background:#fff;font-size:14px;font-weight:500;color:var(--ink2);transition:border-color .12s, background .12s, color .12s}
+  .sbtn:hover{border-color:#cbd5e1;background:var(--soft)}
+  .sbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .sbtn svg{width:17px;height:17px;stroke:currentColor}
+  .sbtn .n{font-size:12px;color:var(--dim);font-weight:500}
+  .sbtn.active{background:var(--ink);border-color:var(--ink);color:#fff}
+  .sbtn.active .n{color:#94a3b8}
+  .why{margin-top:10px;font-size:13px;color:var(--muted)}
+
+  /* Device pickers */
+  .pick{display:grid;grid-template-columns:1fr 44px 1fr;gap:0;margin-top:20px;align-items:stretch}
+  .dev{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:20px 22px;position:relative;overflow:visible}
+  .dev::before{content:"";position:absolute;left:-1px;right:-1px;top:-1px;height:3px;border-radius:var(--r) var(--r) 0 0;background:var(--a)}
+  .dev.b::before{background:var(--b)}
+  .dev .lbl{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .dev .lbl i{width:8px;height:8px;border-radius:50%;background:var(--a)}
+  .dev.b .lbl i{background:var(--b)}
+  .dev .head{display:flex;align-items:flex-start;gap:14px;margin:14px 0 18px;min-height:58px}
+  .dev .ic{flex:none;width:52px;height:52px;border-radius:10px;background:var(--soft);border:1px solid var(--line2);display:grid;place-items:center}
+  .dev .ic svg{width:26px;height:26px;stroke:var(--ink2)}
+  .dev .br{font-size:13px;color:var(--muted);font-weight:500}
+  .dev .md{font-size:21px;font-weight:700;letter-spacing:-.015em;line-height:1.2}
+  .dev .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+  .tag{font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--ink2);border:1px solid var(--line2)}
+  .tag.new{background:#ecfdf3;color:#067647;border-color:#c6f0d8}
+  .fields{display:grid;grid-template-columns:1fr 1.5fr;gap:10px}
+  .swap{align-self:center;justify-self:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;display:grid;place-items:center;z-index:2;box-shadow:var(--shadow)}
+  .swap svg{width:16px;height:16px;stroke:var(--ink2)}
+  .swap:hover{border-color:#cbd5e1;background:var(--soft)}
+  .swap:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  /* Combobox */
+  .combo{position:relative}
+  .combo label{display:block;font-size:12px;font-weight:600;color:var(--ink2);margin-bottom:6px}
+  .combo .box{position:relative}
+  .combo input{width:100%;height:40px;font:inherit;font-size:14px;font-weight:500;color:var(--ink);background:#fff;border:1px solid #d5dae1;border-radius:8px;padding:0 32px 0 34px;outline:none;transition:border-color .12s, box-shadow .12s}
+  .combo input:hover{border-color:#b8c0cc}
+  .combo input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(29,78,216,.14)}
+  .combo .lens{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:15px;height:15px;stroke:var(--dim);pointer-events:none}
+  .combo .caret{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:14px;height:14px;stroke:var(--dim);pointer-events:none}
+  .combo ul{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:60;margin:0;padding:4px;list-style:none;max-height:320px;overflow:auto;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 32px -8px rgba(15,23,42,.18);display:none;min-width:240px}
+  .combo.open ul{display:block}
+  .combo li{padding:8px 10px;border-radius:6px;cursor:pointer;display:flex;justify-content:space-between;gap:10px;font-size:14px}
+  .combo li .s{color:var(--dim);font-size:12px;white-space:nowrap}
+  .combo li.hl{background:var(--soft)}
+  .combo li.sel{font-weight:600;color:var(--accent)}
+  .combo li.grp{cursor:default;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);padding:10px 10px 4px}
+  .combo li.none{cursor:default;color:var(--muted)}
+  .combo mark{background:#fef3c7;color:inherit;border-radius:2px}
+
+  /* Summary */
+  .summary{margin-top:20px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 320px;gap:28px;padding:22px 24px;align-items:center}
+  .summary .k{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .summary h2{margin:4px 0 4px;font-size:22px;letter-spacing:-.015em;line-height:1.25}
+  .summary h2 .ca{color:var(--a)} .summary h2 .cb{color:var(--b)}
+  .summary p{margin:0;color:var(--muted);font-size:14px}
+  .score .row2{display:flex;align-items:center;gap:10px;font-size:13px;margin:6px 0}
+  .score .nm{width:118px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink2);font-weight:500}
+  .score .tr{flex:1;height:8px;background:var(--soft);border-radius:999px;overflow:hidden}
+  .score .tr i{display:block;height:100%;border-radius:999px;transition:width .4s ease}
+  .score .pa i{background:var(--a)} .score .pb i{background:var(--b)}
+  .score b{width:46px;text-align:right;font-weight:600}
+
+  /* Spec table */
+  .toolbar{display:flex;align-items:center;justify-content:space-between;margin:26px 0 10px;gap:12px;flex-wrap:wrap}
+  .toolbar h3{margin:0;font-size:17px;letter-spacing:-.01em}
+  .toggle{display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--ink2);cursor:pointer;user-select:none}
+  .toggle input{appearance:none;width:34px;height:20px;border-radius:999px;background:#cbd5e1;position:relative;cursor:pointer;transition:background .15s;margin:0}
+  .toggle input::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.2);transition:transform .15s}
+  .toggle input:checked{background:var(--accent)}
+  .toggle input:checked::after{transform:translateX(14px)}
+  .toggle input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  .spec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+  .shead{display:grid;grid-template-columns:220px 1fr 1fr;position:sticky;top:60px;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);border-radius:var(--r) var(--r) 0 0}
+  .shead > div{padding:12px 20px;font-size:14px;font-weight:600;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .shead .ha{color:var(--a)} .shead .hb{color:var(--b)}
+  .shead .h0{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center}
+  .grp{padding:14px 20px 8px;font-size:12px;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.07em;background:var(--soft);border-bottom:1px solid var(--line2)}
+  .grp.key{background:var(--accent-soft);color:var(--accent)}
+  .srow{display:grid;grid-template-columns:220px 1fr 1fr;border-bottom:1px solid var(--line2)}
+  .srow:last-child{border-bottom:none;border-radius:0 0 var(--r) var(--r)}
+  .srow > div{padding:12px 20px;font-size:14px;min-width:0}
+  .srow .k{color:var(--muted);font-weight:500;font-size:13.5px}
+  .srow.key .k{color:var(--ink);font-weight:600}
+  .srow.same .v{color:var(--ink2)}
+  .v{display:flex;flex-direction:column;gap:6px}
+  .v .t{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .v.win .t{font-weight:600;color:var(--win)}
+  .chk{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--win);background:var(--win-soft);border:1px solid #c6f0d8;padding:1px 7px;border-radius:999px}
+  .bar{height:4px;background:var(--soft);border-radius:999px;overflow:hidden;max-width:260px}
+  .bar i{display:block;height:100%;border-radius:999px;transition:width .4s ease}
+  .va .bar i{background:var(--a)} .vb .bar i{background:var(--b)}
+  .na{color:var(--dim)}
+  .empty{padding:28px 20px;text-align:center;color:var(--muted);font-size:14px}
+
+  .seo{margin-top:36px;max-width:820px;color:var(--ink2);font-size:14.5px}
+  .seo h2{font-size:18px;letter-spacing:-.01em;margin:0 0 8px;color:var(--ink)}
+  .seo p{margin:0 0 10px}
+  .legal{margin-top:10px}
+  .legal a{color:var(--ink2)}
+  footer{margin:28px 0 44px;color:var(--muted);font-size:12.5px;line-height:1.7;border-top:1px solid var(--line);padding-top:18px}
+
+  @media (max-width:900px){
+    .wrap{padding:0 16px}
+    .intro{padding-top:26px}
+    .intro h1{font-size:26px}
+    .prow{grid-template-columns:1fr;gap:10px}
+    .pick{grid-template-columns:1fr}
+    .swap{margin:-8px 0;transform:rotate(90deg)}
+    .fields{grid-template-columns:1fr}
+    .summary{grid-template-columns:1fr}
+    .shead,.srow{grid-template-columns:1fr 1fr}
+    .shead .h0{display:none}
+    .srow .k{grid-column:1/-1;padding-bottom:0}
+    .topbar .meta{display:none}
+  }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <div class="logo"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="16" rx="1.5"/></svg></i>Gerätevergleich</div>
+    <div class="meta" id="meta"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <noscript><p style="padding:16px;background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;margin-top:20px">Bitte aktiviere JavaScript, um den Gerätevergleich zu nutzen.</p></noscript>
+  <section class="intro">
+    <h1>Geräte vergleichen</h1>
+    <p>Wähle Kategorie und Verwendungszweck. Danach zwei Geräte, auch von verschiedenen Marken. Die für dich wichtigsten Daten stehen oben.</p>
+  </section>
+
+  <section class="panel">
+    <div class="prow"><div class="plabel">Kategorie</div><div class="seg" id="cats"></div></div>
+    <div class="prow"><div class="plabel">Verwendungszweck<small>bestimmt, was zählt</small></div><div><div class="seg" id="purposes"></div><div class="why" id="why"></div></div></div>
+  </section>
+
+  <section class="pick">
+    <div class="dev a" id="sideA"></div>
+    <button class="swap" id="swap" title="Geräte tauschen" aria-label="Geräte tauschen"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l-4 4 4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg></button>
+    <div class="dev b" id="sideB"></div>
+  </section>
+
+  <section class="summary" id="summary"></section>
+
+  <div class="toolbar">
+    <h3>Technische Daten</h3>
+    <label class="toggle"><input type="checkbox" id="onlyDiff">Nur Unterschiede anzeigen</label>
+  </div>
+  <section class="spec" id="spec"></section>
+
+  <section class="seo">
+    <h2>Smartphones, Laptops und mehr – welches Gerät passt zu dir?</h2>
+    <p>Mit diesem kostenlosen Gerätevergleich stellst du zwei Geräte direkt gegenüber – zum Beispiel das iPhone 18 Pro gegen das Samsung Galaxy S26 Ultra,
+    das Google Pixel 11 Pro gegen das Xiaomi 17 Ultra, ein MacBook Air gegen ein Gaming-Notebook oder die Apple Watch gegen eine Garmin.
+    Enthalten sind über 270 Smartphones, Tablets, Laptops, PCs und Smartwatches von Marken wie Apple, Samsung, Google, Xiaomi, OnePlus, Lenovo, HP, Dell, ASUS, Acer, MSI und Garmin.</p>
+    <p>Wähle zuerst, wofür du das Gerät brauchst – etwa Gaming, Arbeit, Foto &amp; Video, Unterwegs oder Preis-Leistung. Der Vergleich zeigt dann die dafür wichtigsten Werte zuerst
+    (zum Beispiel Grafikkarte und Bildwiederholrate beim Gaming, Akku und Gewicht für unterwegs) und bewertet, welches Gerät besser passt.</p>
+  </section>
+
+  <footer>
+    Herstellerangaben und Fachpresse, Stand November 2026. Alle Angaben ohne Gewähr. „–“ bedeutet: keine verlässliche Angabe vorhanden.<br>
+    Preis = unverbindliche Preisempfehlung in Deutschland zum Marktstart (Basisversion); aktuelle Händlerpreise können deutlich abweichen.
+    „bis“ = abhängig von der Konfiguration.<br>
+    Bewertung: Jeder bessere Wert unter „Wichtig für …“ zählt 1 Punkt, der wichtigste 2 Punkte. Prozessoren und Kameras werden nicht automatisch bewertet,
+    Grafik nur grob (eigene Grafikkarte vor integrierter). Der Akku wird nur verglichen, wenn beide Hersteller dieselbe Einheit angeben.
+    <div class="legal">Private, nicht-kommerzielle Website ohne Werbung, Cookies oder Tracking.</div>
+  </footer>
+</main>
+
+<script src="data.js"></script>
+<script>
+const D = window.DEVICES;
+const ICONS = {
+  phone: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>',
+  tablet:'<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3" width="17" height="18" rx="2.5"/><path d="M11 18h2"/></svg>',
+  laptop:'<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4.5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg>',
+  pc:    '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8.5 20.5h7M12 16.5v4"/></svg>',
+  watch: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="3"/><path d="M9 6l.6-3.5h4.8L15 6M9 18l.6 3.5h4.8L15 18"/></svg>',
+};
+const LENS = '<svg class="lens" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>';
+const CARET = '<svg class="caret" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
+
+const CATS = [
+  {id:"phone", name:"Smartphones"}, {id:"tablet", name:"Tablets"}, {id:"laptop", name:"Laptops"},
+  {id:"pc", name:"PCs"}, {id:"watch", name:"Smartwatches"},
+];
+
+const PURPOSES = {
+  phone: [
+    {id:"alltag", name:"Alltag", why:"Gutes Display, solide Kamera, ein Akku für den ganzen Tag und lange Updates.", keys:["display","camera","battery","updates","price"]},
+    {id:"gaming", name:"Gaming", why:"Schneller Chip, hohe Bildwiederholrate, viel Arbeitsspeicher und schnelles Laden.", keys:["chip","hz","ram","battery","charge","storage"]},
+    {id:"arbeit", name:"Arbeit", why:"Ausdauernder Akku, genug Speicher, lange Software-Updates.", keys:["battery","updates","ram","storage","charge","os"]},
+    {id:"foto",   name:"Foto & Video", why:"Kameras zuerst, dazu viel Speicher und ein gutes Display.", keys:["camera","front","storage","display","chip"]},
+    {id:"mobil",  name:"Unterwegs & Outdoor", why:"Lange Laufzeit, schnelles Laden, wenig Gewicht und Wasserschutz.", keys:["battery","charge","weight","ip"]},
+    {id:"budget", name:"Preis-Leistung", why:"Der Preis zählt am meisten, danach Updates, Akku und Speicher.", keys:["price","updates","battery","storage","ram"]},
+  ],
+  tablet: [
+    {id:"alltag", name:"Alltag & Streaming", why:"Großes, gutes Display und ein ausdauernder Akku.", keys:["display","hz","battery","os","price"]},
+    {id:"gaming", name:"Gaming", why:"Schneller Chip, hohe Bildwiederholrate und viel Arbeitsspeicher.", keys:["chip","hz","ram","display","battery"]},
+    {id:"arbeit", name:"Arbeit & Schule", why:"Leistung für Multitasking, genug Speicher, großes Display.", keys:["chip","ram","storage","display","os"]},
+    {id:"foto",   name:"Kreativ & Bildbearbeitung", why:"Starker Chip, sehr gutes Display und viel Speicher.", keys:["chip","display","storage","ram"]},
+    {id:"mobil",  name:"Unterwegs", why:"Wenig Gewicht und lange Laufzeit.", keys:["weight","battery","display"]},
+    {id:"budget", name:"Preis-Leistung", why:"Der Preis zählt am meisten, danach Speicher und Arbeitsspeicher.", keys:["price","storage","ram","battery"]},
+  ],
+  laptop: [
+    {id:"arbeit", name:"Arbeit & Studium", why:"Genug Arbeitsspeicher, langer Akku und ein Gewicht, das man gern mitnimmt.", keys:["chip","ram","battery","weight","display","os"]},
+    {id:"gaming", name:"Gaming", why:"Die Grafikkarte zählt am meisten, dann Prozessor, Bildwiederholrate und Arbeitsspeicher.", keys:["gpu","chip","hz","ram","storage"]},
+    {id:"foto",   name:"Foto & Video", why:"Starker Chip und Grafik, viel Arbeitsspeicher und Speicher, gutes Display.", keys:["chip","gpu","ram","storage","display"]},
+    {id:"mobil",  name:"Unterwegs", why:"Leicht, lange Akkulaufzeit, kompaktes Display.", keys:["weight","battery","display"]},
+    {id:"budget", name:"Preis-Leistung", why:"Der Preis zählt am meisten, danach Arbeitsspeicher und Speicher.", keys:["price","ram","storage","battery"]},
+  ],
+  pc: [
+    {id:"gaming", name:"Gaming", why:"Die Grafikkarte zählt am meisten, dann Prozessor und Arbeitsspeicher.", keys:["gpu","chip","ram","storage"]},
+    {id:"arbeit", name:"Arbeit & Büro", why:"Solider Prozessor, genug Arbeitsspeicher und Speicher.", keys:["chip","ram","storage","os"]},
+    {id:"foto",   name:"Foto & Video", why:"Viel Grafik- und Rechenleistung, viel Arbeitsspeicher und Speicher.", keys:["chip","gpu","ram","storage"]},
+  ],
+  watch: [
+    {id:"sport",  name:"Sport & Fitness", why:"Lange Akkulaufzeit, gut ablesbares Display, wenig Gewicht.", keys:["battery","display","weight","chip"]},
+    {id:"alltag", name:"Alltag", why:"Passendes System zum Handy, Display, Akku und Preis.", keys:["os","display","battery","price","year"]},
+  ],
+};
+
+/* ---------- Werte ---------- */
+const eur = n => n.toLocaleString("de-DE") + " €";
+const fmtGB = g => g >= 1024 ? (g/1024).toLocaleString("de-DE") + " TB" : g + " GB";
+const range = (r, f) => r[0] === r[1] ? f(r[0]) : f(r[0]) + " – " + f(r[1]);
+const fmtW = w => w >= 1000 ? (w/1000).toLocaleString("de-DE",{maximumFractionDigits:2}) + " kg" : w + " g";
+const hzOf = d => { const m = /(\d+) Hz/.exec(d.display || ""); return m ? +m[1] : null; };
+const firstNum = (s, re) => { const m = re.exec(s || ""); return m ? +m[1] : null; };
+function batt(d){
+  const s = (d.battery || "").replace(/\./g,"").replace(",",".");
+  let m;
+  if ((m = /([\d.]+)\s*mAh/.exec(s))) return {u:"mAh", n:+m[1]};
+  if ((m = /([\d.]+)\s*Wh/.exec(s)))  return {u:"Wh",  n:+m[1]};
+  if ((m = /([\d.]+)(?:\s*\/\s*[\d.]+)?\s*Tage/.exec(s))) return {u:"h", n:+m[1]*24};
+  if ((m = /([\d.]+)(?:\s*\/\s*[\d.]+)?\s*h/.exec(s))) return {u:"h", n:+m[1]};
+  return null;
+}
+function gpuTier(d){
+  const g = d.gpu || ""; if (!g) return null;
+  if (/RTX [45]090/.test(g)) return 7;
+  if (/RTX [45]080/.test(g)) return 6;
+  if (/RTX [45]070/.test(g)) return 5;
+  if (/60- bis|76|80-Kern/.test(g)) return 4.5;
+  if (/RTX [45]0[56]0/.test(g)) return 4;
+  if (/32- bis 40|bis 40/.test(g)) return 3.5;
+  if (/16- bis 20|20-Kern/.test(g)) return 3;
+  if (/10-Kern|8- bis 10/.test(g)) return 2;
+  return 1;
+}
+const ipScore = d => { const m = /IP([\dX])(\d)/.exec(d.ip || ""); if (!m) return null; return (+m[2])*10 + (m[1]==="X" ? 0 : +m[1]); };
+
+// Felder: Bezeichnung, Gruppe, Anzeige, Zahl, besser (high/low), Balken
+const F = {
+  price:   {l:"Preis (UVP zum Marktstart)", g:"Überblick", v:d => d.price && "ab " + eur(d.price), n:d => d.price, dir:"low", bar:true},
+  year:    {l:"Marktstart", g:"Überblick", v:d => d.year && String(d.year), n:d => d.year, dir:"high"},
+  os:      {l:"Betriebssystem", g:"Überblick", v:d => d.os},
+  display: {l:"Display", g:"Display", v:d => d.display},
+  hz:      {l:"Bildwiederholrate", g:"Display", v:d => hzOf(d) && hzOf(d) + " Hz", n:hzOf, dir:"high", bar:true},
+  chip:    {l:"Prozessor", g:"Leistung", v:d => d.chip},
+  gpu:     {l:"Grafik", g:"Leistung", v:d => d.gpu, n:gpuTier, dir:"high"},
+  ram:     {l:"Arbeitsspeicher (RAM)", g:"Leistung", v:d => d.ram && range(d.ram, g => g + " GB"), n:d => d.ram && d.ram[1], dir:"high", bar:true},
+  storage: {l:"Speicher", g:"Leistung", v:d => d.storage && range(d.storage, fmtGB), n:d => d.storage && d.storage[1], dir:"high", bar:true},
+  camera:  {l:"Kamera hinten", g:"Kamera", v:d => d.camera},
+  front:   {l:"Frontkamera", g:"Kamera", v:d => d.front, n:d => firstNum(d.front, /([\d,]+)\s*MP/), dir:"high"},
+  battery: {l:"Akku", g:"Akku & Laden", v:d => d.battery, dir:"high", bar:true},
+  charge:  {l:"Laden", g:"Akku & Laden", v:d => d.charge, n:d => firstNum(d.charge, /^(\d+)\s*W/), dir:"high"},
+  weight:  {l:"Gewicht", g:"Design & Robustheit", v:d => d.weight && fmtW(d.weight), n:d => d.weight, dir:"low", bar:true},
+  ip:      {l:"Wasser- & Staubschutz", g:"Design & Robustheit", v:d => d.ip, n:ipScore, dir:"high"},
+  updates: {l:"Software-Updates", g:"Software", v:d => d.updates, n:d => firstNum(d.updates, /(\d+)\s*Jahre/), dir:"high"},
+};
+const GROUPS = ["Überblick","Display","Leistung","Kamera","Akku & Laden","Design & Robustheit","Software"];
+
+function nums(k, A, B){
+  if (k === "battery"){ const a = batt(A), b = batt(B); return (a && b && a.u === b.u) ? [a.n, b.n] : null; }
+  const f = F[k].n; if (!f) return null;
+  const na = f(A), nb = f(B);
+  return (na == null || nb == null) ? null : [na, nb];
+}
+function winner(k, A, B){
+  const dir = F[k].dir; if (!dir || A === B) return 0;
+  const n = nums(k, A, B); if (!n || n[0] === n[1]) return 0;
+  return (dir === "high" ? n[0] > n[1] : n[0] < n[1]) ? 1 : -1;
+}
+
+/* ---------- State ---------- */
+const state = {cat:"phone", purpose:"alltag", A:null, B:null, onlyDiff:false};
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const norm = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/\s+/g," ").trim();
+const inCat = () => D.filter(d => d.c === state.cat);
+const byNew = (a, b) => (b.year||0) - (a.year||0) || (b.price||0) - (a.price||0);
+const brands = () => {
+  const m = new Map(); inCat().forEach(d => m.set(d.b, (m.get(d.b)||0)+1));
+  return [...m].sort((a,b) => b[1]-a[1] || a[0].localeCompare(b[0]));
+};
+const modelsOf = b => inCat().filter(d => d.b === b).sort(byNew);
+const purpose = () => PURPOSES[state.cat].find(p => p.id === state.purpose);
+function hilite(text, q){
+  if (!q) return esc(text);
+  const i = norm(text).indexOf(norm(q));
+  if (i < 0) return esc(text);
+  return esc(text.slice(0,i)) + "<mark>" + esc(text.slice(i, i+q.length)) + "</mark>" + esc(text.slice(i+q.length));
+}
+
+/* ---------- Combobox ---------- */
+function Combo(host, {label, placeholder, items, current, onPick}){
+  host.innerHTML = `<label>${label}</label><div class="box">${LENS}<input autocomplete="off" spellcheck="false" placeholder="${placeholder}">${CARET}</div><ul role="listbox"></ul>`;
+  host.classList.add("combo");
+  const input = host.querySelector("input"), ul = host.querySelector("ul");
+  let list = [], hl = -1, typed = false;
+  const reset = () => { input.value = current() || ""; };
+  const picks = () => list.filter(x => !x.group);
+  function render(){
+    const q = typed ? input.value.trim() : "";
+    list = items(q);
+    const cur = current(), p = picks();
+    if (!p.length){ ul.innerHTML = `<li class="none">Keine Treffer für „${esc(q)}“</li>`; hl = -1; return; }
+    if (hl >= p.length) hl = 0;
+    let k = -1;
+    ul.innerHTML = list.map(x => {
+      if (x.group) return `<li class="grp">${esc(x.group)}</li>`;
+      k++;
+      return `<li data-k="${k}" class="${k===hl?"hl":""} ${x.label===cur && !x.other?"sel":""}"><span>${hilite(x.label, q)}</span>${x.sub?`<span class="s">${esc(x.sub)}</span>`:""}</li>`;
+    }).join("");
+    const el = ul.querySelector(".hl"); if (el && el.scrollIntoView) el.scrollIntoView({block:"nearest"});
+  }
+  function open(){ host.classList.add("open"); render(); }
+  function close(){ host.classList.remove("open"); typed = false; hl = -1; reset(); }
+  function choose(x){ host.classList.remove("open"); typed = false; hl = -1; onPick(x); }
+  input.addEventListener("focus", () => { input.select(); hl = -1; open(); });
+  input.addEventListener("input", () => { typed = true; hl = 0; open(); });
+  input.addEventListener("keydown", e => {
+    const p = picks();
+    if (e.key === "ArrowDown"){ e.preventDefault(); if (!host.classList.contains("open")) open(); hl = Math.min(p.length-1, hl+1); render(); }
+    else if (e.key === "ArrowUp"){ e.preventDefault(); hl = Math.max(0, hl-1); render(); }
+    else if (e.key === "Enter"){ e.preventDefault(); const x = p[hl >= 0 ? hl : 0]; if (x){ choose(x); input.blur(); } }
+    else if (e.key === "Escape"){ close(); input.blur(); }
+  });
+  input.addEventListener("blur", () => setTimeout(() => { if (document.activeElement !== input) close(); }, 120));
+  ul.addEventListener("mousedown", e => {
+    e.preventDefault();
+    const li = e.target.closest("li[data-k]"); if (!li) return;
+    choose(picks()[+li.dataset.k]); input.blur();
+  });
+  reset();
+  return {reset};
+}
+
+/* ---------- Geräte-Karten ---------- */
+const sides = {};
+function buildSide(S){
+  const el = $("side"+S);
+  el.innerHTML = `<div class="lbl"><i></i>Gerät ${S}</div>
+    <div class="head"><div class="ic"></div><div style="min-width:0"><div class="br"></div><div class="md"></div><div class="tags"></div></div></div>
+    <div class="fields"><div class="cb-brand"></div><div class="cb-model"></div></div>`;
+  const brand = Combo(el.querySelector(".cb-brand"), {
+    label:"Marke", placeholder:"Marke eingeben …",
+    current: () => state[S] && state[S].b,
+    items: q => brands().filter(([b]) => !q || norm(b).includes(norm(q))).map(([b,n]) => ({label:b, sub:n + (n===1?" Gerät":" Geräte"), brand:b})),
+    onPick: x => { if (x.brand !== state[S].b) state[S] = pickDefault(x.brand); update(); },
+  });
+  const model = Combo(el.querySelector(".cb-model"), {
+    label:"Modell", placeholder:"Modell eingeben …",
+    current: () => state[S] && state[S].m,
+    items: q => {
+      const n = norm(q);
+      const rank = d => { const m = norm(d.m), bm = norm(d.b + " " + d.m); return (m===n||bm===n) ? 0 : (m.startsWith(n)||bm.startsWith(n)) ? 1 : 2; };
+      const match = d => !q || norm(d.m).includes(n) || norm(d.b + " " + d.m).includes(n);
+      const sortQ = arr => q ? arr.slice().sort((a,b) => rank(a)-rank(b) || byNew(a,b)) : arr;
+      const out = sortQ(modelsOf(state[S].b).filter(match)).map(d => ({label:d.m, sub:[d.year, d.price && eur(d.price)].filter(Boolean).join(" · "), dev:d}));
+      if (q){
+        const other = sortQ(inCat().filter(d => d.b !== state[S].b && match(d)));
+        if (other.length){
+          out.push({group:"Andere Marken"});
+          other.slice(0, 40).forEach(d => out.push({label:d.m, sub:d.b, dev:d, other:true}));
+        }
+      }
+      return out;
+    },
+    onPick: x => { state[S] = x.dev; update(); },
+  });
+  sides[S] = {el, brand, model};
+}
+function renderSide(S){
+  const {el, brand, model} = sides[S], d = state[S];
+  el.querySelector(".ic").innerHTML = ICONS[state.cat];
+  el.querySelector(".br").textContent = d.b;
+  el.querySelector(".md").textContent = d.m;
+  const tags = [];
+  if (d.year >= 2026) tags.push('<span class="tag new">Neu 2026</span>');
+  else if (d.year) tags.push(`<span class="tag">${d.year}</span>`);
+  if (d.price) tags.push(`<span class="tag">ab ${eur(d.price)}</span>`);
+  el.querySelector(".tags").innerHTML = tags.join("");
+  brand.reset(); model.reset();
+}
+
+/* ---------- Render ---------- */
+function renderTop(){
+  $("meta").textContent = `${D.length} Geräte · ${new Set(D.map(d => d.b)).size} Marken · Stand November 2026`;
+  $("cats").innerHTML = CATS.map(c => {
+    const n = D.filter(d => d.c === c.id).length;
+    return `<button class="sbtn ${c.id===state.cat?"active":""}" data-cat="${c.id}">${ICONS[c.id]}${c.name}<span class="n">${n}</span></button>`;
+  }).join("");
+  $("purposes").innerHTML = PURPOSES[state.cat].map(p =>
+    `<button class="sbtn ${p.id===state.purpose?"active":""}" data-purpose="${p.id}">${p.name}</button>`).join("");
+  $("why").textContent = purpose().why;
+}
+function renderCompare(){
+  const A = state.A, B = state.B, p = purpose();
+  const has = k => F[k].v(A) || F[k].v(B);
+  const important = p.keys.filter(has);
+
+  let sa = 0, sb = 0, max = 0;
+  important.forEach((k, i) => {
+    const pts = i === 0 ? 2 : 1, w = winner(k, A, B);
+    if (F[k].dir) max += pts;
+    if (w > 0) sa += pts; if (w < 0) sb += pts;
+  });
+  let head, sub;
+  if (A === B){ head = "Zweimal dasselbe Gerät"; sub = "Wähle bei Gerät B ein anderes Modell."; }
+  else if (sa === sb){ head = "Gleichstand"; sub = "Bei den wichtigen, messbaren Werten liegen beide gleichauf. Vergleiche unten Prozessor, Kamera und Display."; }
+  else { const wA = sa > sb; head = `<span class="${wA?"ca":"cb"}">${esc((wA?A:B).m)}</span> passt besser`; sub = `Liegt bei den für „${esc(p.name)}“ wichtigen Werten vorn (${Math.max(sa,sb)} zu ${Math.min(sa,sb)} Punkten).`; }
+  const pct = v => max ? Math.round(v / max * 100) : 0;
+  $("summary").innerHTML = `<div><div class="k">Ergebnis · ${esc(p.name)}</div><h2>${head}</h2><p>${sub}</p></div>
+    <div class="score">
+      <div class="row2 pa"><span class="nm">${esc(A.m)}</span><span class="tr"><i style="width:${pct(sa)}%"></i></span><b>${sa} Pkt.</b></div>
+      <div class="row2 pb"><span class="nm">${esc(B.m)}</span><span class="tr"><i style="width:${pct(sb)}%"></i></span><b>${sb} Pkt.</b></div>
+    </div>`;
+
+  const cell = (k, d, cls, w, n, idx) => {
+    const v = F[k].v(d);
+    let bar = "";
+    if (F[k].bar && n){
+      const mx = Math.max(n[0], n[1]) || 1;
+      bar = `<div class="bar"><i style="width:${Math.max(4, n[idx]/mx*100)}%"></i></div>`;
+    }
+    return `<div class="v ${cls} ${w?"win":""}"><div class="t">${v ? esc(v) : '<span class="na">–</span>'}${w?'<span class="chk">✓ besser</span>':""}</div>${bar}</div>`;
+  };
+  const row = (k, key) => {
+    const va = F[k].v(A) || "–", vb = F[k].v(B) || "–";
+    const same = va === vb;
+    if (state.onlyDiff && same) return "";
+    const w = winner(k, A, B), n = nums(k, A, B);
+    return `<div class="srow ${key?"key":""} ${same?"same":""}"><div class="k">${F[k].l}</div>${cell(k, A, "va", w>0, n, 0)}${cell(k, B, "vb", w<0, n, 1)}</div>`;
+  };
+
+  let html = `<div class="shead"><div class="h0">Merkmal</div><div class="ha">${esc(A.b)} ${esc(A.m)}</div><div class="hb">${esc(B.b)} ${esc(B.m)}</div></div>`;
+  const imp = important.map(k => row(k, true)).join("");
+  if (imp) html += `<div class="grp key">Wichtig für ${esc(p.name)}</div>` + imp;
+  for (const g of GROUPS){
+    const rows = Object.keys(F).filter(k => F[k].g === g && !important.includes(k) && has(k)).map(k => row(k, false)).join("");
+    if (rows) html += `<div class="grp">${g}</div>` + rows;
+  }
+  if (state.onlyDiff && !/srow/.test(html)) html += `<div class="empty">Keine Unterschiede gefunden.</div>`;
+  $("spec").innerHTML = html;
+}
+function update(){ renderTop(); renderSide("A"); renderSide("B"); renderCompare(); }
+
+// Standardauswahl: neuestes "normales" Modell (keine Falt-Handys)
+const pickDefault = b => { const ms = modelsOf(b); return ms.find(d => !/Fold|Flip|Duo|razr|faltbar/i.test(d.m)) || ms[0]; };
+function setCat(cat){
+  state.cat = cat;
+  state.purpose = PURPOSES[cat][0].id;
+  const bs = brands();
+  state.A = pickDefault(bs[0][0]);
+  state.B = bs.length > 1 ? pickDefault(bs[1][0]) : (modelsOf(bs[0][0])[1] || state.A);
+  update();
+}
+
+$("cats").addEventListener("click", e => { const t = e.target.closest("[data-cat]"); if (t && t.dataset.cat !== state.cat) setCat(t.dataset.cat); });
+$("purposes").addEventListener("click", e => { const t = e.target.closest("[data-purpose]"); if (t){ state.purpose = t.dataset.purpose; renderTop(); renderCompare(); } });
+$("swap").addEventListener("click", () => { [state.A, state.B] = [state.B, state.A]; update(); });
+$("onlyDiff").addEventListener("change", e => { state.onlyDiff = e.target.checked; renderCompare(); });
+
+buildSide("A"); buildSide("B");
+setCat("phone");
+</script>
+</body>
+</html>
